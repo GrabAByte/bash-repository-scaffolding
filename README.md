@@ -1,0 +1,1 @@
+# bash-repository-scaffolding
