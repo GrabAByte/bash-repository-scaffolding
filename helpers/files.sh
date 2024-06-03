@@ -13,7 +13,7 @@ setFileContent () {
   local file="$1"
   if [ ! -s "${file}" ]; then
     while read -r line; do
-      var+="${line}" | tee -a "${file}"
+      var+=$(cat < "${line}" | tee -a "${file}")
     done
   fi
 }

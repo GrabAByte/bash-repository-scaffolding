@@ -12,9 +12,6 @@ files=(CHANGELOG.md
        .github/workflows/ci.yml
        .gitignore)
 
-source helpers/files.sh
-source helpers/directories.sh
-
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"
 done

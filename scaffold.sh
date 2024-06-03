@@ -16,7 +16,7 @@ source helpers/directories.sh
 ## Create target directory if it doesnt exist
 if [ ! -d "${target_directory}" ]; then
   createDirectory "${target_directory}"
-  cd "${target_directory}"
+  cd "${target_directory}" || exit
 fi
 
 sh "${working_directory}/structures/common.sh" "${target_directory}"

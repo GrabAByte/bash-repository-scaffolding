@@ -6,9 +6,6 @@ target_directory="$1"
 directories=()
 files=()
 
-source helpers/files.sh
-source helpers/directories.sh
-
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"
 done
