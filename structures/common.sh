@@ -3,9 +3,14 @@
 target_directory="$1"
 
 ## Set common files and directories
-directories=(docker)
-files=(.hadolint.yml
-       docker/Dockerfile)
+directories=(.github/workflows docs)
+files=(CHANGELOG.md
+       LICENSE
+       metadata.json
+       OWNERS
+       README.md
+       .github/workflows/ci.yml
+       .gitignore)
 
 source helpers/files.sh
 source helpers/directories.sh
