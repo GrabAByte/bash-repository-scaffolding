@@ -14,6 +14,9 @@ files=(CHANGELOG.md
        .gitignore
        .pre-commit-config.yaml)
 
+source helpers/directories.sh
+source helpers/files.sh
+
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"
 done

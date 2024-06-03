@@ -6,6 +6,9 @@ target_directory="$1"
 directories=()
 files=(.yamllint)
 
+source helpers/directories.sh
+source helpers/files.sh
+
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"
 done

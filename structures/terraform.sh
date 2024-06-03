@@ -1,7 +1,7 @@
 #!/bin/bash
 
 target_directory="$1"
-terraform_repository_type="$2"
+terraform_repository_type="$3"
 
 ## Set common files and directories
 case "${terraform_repository_type}" in
@@ -27,7 +27,13 @@ case "${terraform_repository_type}" in
            variables.tf
            versions.tf)
     ;;
+  *)
+    echo "error: terraform type not provided"
+    exit 2
 esac
+
+source helpers/directories.sh
+source helpers/files.sh
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

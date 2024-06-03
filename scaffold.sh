@@ -2,30 +2,42 @@
 
 working_directory=$(pwd)
 
-while getopts ":t:s" opt; do
+## Gather passed flags
+while getopts ":o:s:t:" opt; do
   case $opt in
-    t)
-      target_directory="$OPTARG"
+    o)
+      output_directory="$OPTARG"
       ;;
     s)
-      target_structure="$OPTARG"
+      structure_technology="$OPTARG"
+      ;;
+    t)
+      # optional
+      structure_type="$OPTARG"
       ;;
     *)
       echo "error: unknown argument"
-      echo "usage: ./scaffold.sh -t ~/my-new-repository -s docker"
+      echo "usage: ./scaffold.sh -t role -o ~/my-new-repository -s docker"
       exit 1
       ;;
   esac
 done
 
+## source helpers
 source helpers/directories.sh
 source helpers/files.sh
 
-## Create target directory if it doesnt exist
-if [ ! -d "${target_directory}" ]; then
-  createDirectory "${target_directory}"
-  cd "${target_directory}" || exit
+## Create output directory if it doesnt exist
+if [ ! -d "${output_directory}" ]; then
+  createDirectory "${output_directory}"
+  cd "${output_directory}" || exit
 fi
 
-sh "${working_directory}/structures/common.sh" "${target_directory}"
-sh "${working_directory}/structures/${target_structure}.sh" "${target_directory}"
+## Run Scripts
+sh "${working_directory}/structures/common.sh" "${output_directory}"
+
+if [ -z ${structure_type+x} ]; then
+  sh "${working_directory}/structures/${structure_technology}.sh" "${output_directory}"
+else
+  sh "${working_directory}/structures/${structure_technology}.sh" "${output_directory}" "${structure_type}"
+fi

@@ -11,6 +11,9 @@ files=(src/__init__.py
        setup.py
        TODO.md)
 
+source helpers/directories.sh
+source helpers/files.sh
+
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"
 done

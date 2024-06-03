@@ -1,7 +1,7 @@
 #!/bin/bash
 
 target_directory="$1"
-puppet_repository_type="$2"
+puppet_repository_type="$3"
 
 ## Set common files and directories
 case "${puppet_repository_type}" in
@@ -42,6 +42,9 @@ case "${puppet_repository_type}" in
            .hiera.yml)
     ;;
 esac
+
+source helpers/directories.sh
+source helpers/files.sh
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

@@ -9,6 +9,9 @@ directories=(charts
 files=(lint.yaml
        examples/default_values.yaml)
 
+source helpers/directories.sh
+source helpers/files.sh
+
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"
 done

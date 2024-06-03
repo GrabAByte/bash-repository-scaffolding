@@ -1,7 +1,7 @@
 #!/bin/bash
 
 target_directory="$1"
-ansible_repository_type="$2"
+ansible_repository_type="$3"
 
 ## Set common files and directories
 case "${ansible_repository_type}" in
@@ -31,6 +31,9 @@ case "${ansible_repository_type}" in
            site.yml)
     ;;
 esac
+
+source helpers/directories.sh
+source helpers/files.sh
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

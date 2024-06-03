@@ -1,7 +1,7 @@
 #!/bin/bash
 
 target_directory="$1"
-jenkins_repository_type="$2"
+jenkins_repository_type="$3"
 
 ## Set common files and directories
 case "${jenkins_repository_type}" in
@@ -23,6 +23,9 @@ case "${jenkins_repository_type}" in
     files=()
     ;;
 esac
+
+source helpers/directories.sh
+source helpers/files.sh
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

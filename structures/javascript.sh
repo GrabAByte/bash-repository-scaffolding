@@ -17,6 +17,9 @@ directories=(lib
 files=(app.js
        package.json)
 
+source helpers/directories.sh
+source helpers/files.sh
+
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"
 done
