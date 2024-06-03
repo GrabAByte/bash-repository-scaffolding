@@ -30,14 +30,14 @@ source helpers/files.sh
 ## Create output directory if it doesnt exist
 if [ ! -d "${output_directory}" ]; then
   createDirectory "${output_directory}"
-  cd "${output_directory}" || exit
+  #cd "${output_directory}" || exit
 fi
 
 ## Run Scripts
 sh "${working_directory}/structures/common.sh" "${output_directory}"
 
 if [ -z ${structure_type+x} ]; then
-  sh "${working_directory}/structures/${structure_technology}.sh" "${output_directory}"
+  sh "${working_directory}/structures/${structure_technology}.sh" "${output_directory}" "${structure_technology}"
 else
-  sh "${working_directory}/structures/${structure_technology}.sh" "${output_directory}" "${structure_type}"
+  sh "${working_directory}/structures/${structure_technology}.sh" "${output_directory}" "${structure_technology}" "${structure_type}"
 fi

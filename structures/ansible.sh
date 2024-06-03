@@ -22,7 +22,7 @@ case "${ansible_repository_type}" in
             vars/main.yml
            .yamllint)
     ;;
-  'platbook')
+  'playbook')
     directories=(host_vars
                  group_vars
                  roles)
