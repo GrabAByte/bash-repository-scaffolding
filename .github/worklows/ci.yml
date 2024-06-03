@@ -1,0 +1,31 @@
+---
+name: CI
+'on':
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  get-version:
+    uses: GrabAByte/github-devops-workflows/.github/workflows/getVersion.yml@0.9.1
+    with:
+      metadataFile: 'metadata.json'
+      metadataPath: .
+  bash-lint:
+    uses: GrabAByte/github-devops-workflows/.github/workflows/shellCheck.yml@0.9.1
+    needs: get-version
+  sonar-scan:
+    uses: GrabAByte/github-devops-workflows/.github/workflows/sonarScan.yml@0.9.1
+    secrets:
+      WORKFLOW_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    needs: get-version
+  update-version:
+    uses: GrabAByte/github-devops-workflows/.github/workflows/updateVersion.yml@0.9.1
+    with:
+      gitUsername: 'grababyte'
+      gitEmail: 'grababyte@github.com'
+      metadataFile: 'metadata.json'
+      metadataPath: .
+    needs: [bash-lint, sonar-scan]

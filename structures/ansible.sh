@@ -1,15 +1,15 @@
 #!/bin/bash
 
 target_directory="$1"
-terraform_repository_type="$2"
+ansible_repository_type="$2"
 
 ## Set common files and directories
-case "${terraform_repository_type}" in
-  'managed')
+case "${ansible_repository_type}" in
+  'role')
     directories=()
     files=()
     ;;
-  'module')
+  'platbook')
     directories=()
     files=()
     ;;
