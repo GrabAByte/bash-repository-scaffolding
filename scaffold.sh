@@ -1,8 +1,15 @@
 #!/bin/bash
 
-export target_directory="$1"
-export target_structure="$2"
-export working_directory=$(pwd)
+working_directory=$(pwd)
+
+while getopts ":t:s" opt; do
+  case $opt in
+    t)
+      target_directory="$OPTARG";;
+    s)
+      target_structure="$OPTARG";;
+  esac
+done
 
 source helpers/directories.sh
 
