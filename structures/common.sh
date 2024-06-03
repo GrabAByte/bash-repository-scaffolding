@@ -5,12 +5,14 @@ target_directory="$1"
 ## Set common files and directories
 directories=(.github/workflows docs)
 files=(CHANGELOG.md
+       CONTRIBUTING.md
        LICENSE
        metadata.json
        OWNERS
        README.md
        .github/workflows/ci.yml
-       .gitignore)
+       .gitignore
+       .pre-commit-config.yaml)
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

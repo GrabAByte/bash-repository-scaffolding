@@ -6,12 +6,26 @@ terraform_repository_type="$2"
 ## Set common files and directories
 case "${terraform_repository_type}" in
   'managed')
-    directories=()
-    files=()
+    directories=(environments
+                 environments/development
+                 environments/staging
+                 environments/pre-production
+                 environments/production)
+    files=(.tflint.hcl
+           environments/development/{providers.tf,variables.tf,versions.tf,outputs.tf,terraform.tfvars}
+           environments/staging/{providers.tf,variables.tf,versions.tf,outputs.tf,terraform.tfvars}
+           environments/pre-production/{providers.tf,variables.tf,versions.tf,outputs.tfterraform.tfvars}
+           environments/production/{providers.tf,variables.tf,versions.tf,outputs.tf,terraform.tfvars})
     ;;
   'module')
-    directories=()
-    files=()
+    directories=(test)
+    files=(.tflint.hcl
+           locals.tf
+           main.tf
+           outputs.tf
+           providers.tf
+           variables.tf
+           versions.tf)
     ;;
 esac
 

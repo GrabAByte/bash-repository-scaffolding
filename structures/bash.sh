@@ -3,8 +3,8 @@
 target_directory="$1"
 
 ## Set common files and directories
-directories=()
-files=()
+directories=(scripts)
+files=(.shellcheckrc)
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

@@ -3,8 +3,17 @@
 target_directory="$1"
 
 ## Set common files and directories
-directories=()
-files=()
+directories=(lib
+             rake
+             docs
+             rubocop
+             script
+             test
+             test/fixtures)
+files=(.jrubyrc
+       .rubocop.yml
+        Gemfile
+        Rakefile)
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

@@ -3,8 +3,9 @@
 target_directory="$1"
 
 ## Set common files and directories
-directories=()
-files=()
+directories=(jobs/common
+             workflows)
+files=(.yamllint)
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

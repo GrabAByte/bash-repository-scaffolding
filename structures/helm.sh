@@ -3,8 +3,11 @@
 target_directory="$1"
 
 ## Set common files and directories
-directories=()
-files=()
+directories=(charts
+             examples
+             test)
+files=(lint.yaml
+       examples/default_values.yaml)
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

@@ -6,15 +6,20 @@ jenkins_repository_type="$2"
 ## Set common files and directories
 case "${jenkins_repository_type}" in
   'seed')
-    directories=()
-    files=()
+    directories=(seed)
+    files=(Jenkinsfile
+           seed/scaffolding.groovy
+           seed/jobs.groovy)
     ;;
   'pipeline')
-    directories=()
-    files=()
+    directories=(pipelines)
+    files=(Jenkinsfile)
     ;;
   'library')
-    directories=()
+    directories=(resources
+                 src
+                 test
+                 vars)
     files=()
     ;;
 esac

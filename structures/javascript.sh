@@ -3,8 +3,19 @@
 target_directory="$1"
 
 ## Set common files and directories
-directories=()
-files=()
+directories=(lib
+             src
+             build
+             dist
+             bin
+             test
+             unit
+             integration
+             env
+             doc
+             examples)
+files=(app.js
+       package.json)
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"

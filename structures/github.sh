@@ -4,7 +4,7 @@ target_directory="$1"
 
 ## Set common files and directories
 directories=()
-files=()
+files=(.yamllint)
 
 for directory in "${directories[@]}"; do
   createDirectory "${target_directory}/${directory}"
