@@ -27,9 +27,9 @@ An example command to use -
   -t module
 ```
 
-This will create the output directory is it isnt already present, run the ./structures/terraform.sh script and create terraform files and directories relate to module construction
+This will create the output directory is it isnt already present, run the `./structures/terraform.sh` script and create terraform files and directories relate to module construction
 
-Regardless of the structure type, the ./structures/common.sh script will be ran, this contains generic files such as README.md, CHANGELOG.md and LICENSE which should be present in all respositories regardless of tool or programming language.
+Regardless of the structure type, the `./structures/common.sh` script will be ran, this contains generic files such as README.md, CHANGELOG.md and LICENSE which should be present in all respositories regardless of tool or programming language.
 
 ## Authors
 
