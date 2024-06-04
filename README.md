@@ -2,7 +2,7 @@
 
 ## Description
 
-This project was created as an easy way to create industry best practice codebase structures, which act as boilerplates over a number of DevOps tooling and programming languages. This stops the need to fork boilerplate repositories themselves
+This project was created as an easy way to create industry best-practice codebase structures, which act as boilerplates over a number of DevOps tooling and programming languages. This stops the need to fork boilerplate repositories themselves
 
 ## Dependencies
 
@@ -10,7 +10,7 @@ In order to run these scripts you simply need to be running the terminal on a Un
 
 ## Usage
 
-The parent script is housed at the root of the project, named scaffold.sh and takes in a maximum of 3 arguments current, which are -
+The parent script is housed at the root of the project, named scaffold.sh and takes in a maximum of 3 arguments currently, which are -
 
 ```
 -s    The target tooling or programming language, all aptions reside within ./structures
@@ -27,7 +27,7 @@ An example command to use -
   -t module
 ```
 
-This will create the output directory is it isnt already present, run the `./structures/terraform.sh` script and create terraform files and directories relate to module construction
+This will create the output directory is it isnt already present, run the `./structures/terraform.sh` script and create terraform files and directories related to module construction.
 
 Regardless of the structure type, the `./structures/common.sh` script will be ran, this contains generic files such as `README.md`, `CHANGELOG.md` and `LICENSE` which should be present in all respositories regardless of tool or programming language.
 
