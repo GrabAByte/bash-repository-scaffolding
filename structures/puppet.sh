@@ -14,16 +14,14 @@ case "${puppet_repository_type}" in
                  site
                  spec/classes/profile
                  spec/defines
-                 spec/fixtures/hieraata
-               )
+                 spec/fixtures/hieraata)
     files=(.fixtures.yml
            .puppet-lint.rc
            .rubocop.yml
            environment.conf
            hiera.yml
            manifests/site.pp
-           Puppetfile
-      )
+           Puppetfile)
     ;;
   'module')
     directories=(data
