@@ -14,8 +14,8 @@ The parent script is housed at the root of the project, named scaffold.sh and ta
 
 ```
 -s    The target tooling or programming language, all aptions reside within ./structures
--o   The target output directory, this can be a vanilla local directory or an already initialized git repository directory`
--t   (optional) The structure type. This is applicable to tooling which has differing repository structures based on whether it is a module or control repository generally
+-o    The target output directory, this can be a vanilla local directory or an already initialized git repository directory`
+-t    (optional) The structure type. This is applicable to tooling which has differing repository structures based on whether it is a module or control repository generally
 ```
 
 An example command to use -
