@@ -17,7 +17,10 @@ while getopts ":o:s:t:" opt; do
       ;;
     *)
       echo "error: unknown argument"
-      echo "usage: ./scaffold.sh -t role -o ~/my-new-repository -s docker"
+      echo "usage: ./scaffold.sh \
+                     -o ~/code/github/terraform-module-ec2 \
+                     -s terraform \
+                     -t module"
       exit 1
       ;;
   esac
